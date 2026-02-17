@@ -1,0 +1,13 @@
+# https://robotstxt.org/robotstxt.html
+# User-agent: *
+# Disallow:
+
+# Allow all crawlers to access all pages
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://executively-prosupport-particia.ngrok-free.app/sitemap.xml
+
+# Crawl-delay (optional, for respectful crawling)
+Crawl-delay: 1
