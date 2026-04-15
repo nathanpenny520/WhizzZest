@@ -72,18 +72,6 @@
               </a>
             </li>
           </ul>
-          
-          <!-- WeChat Public Accounts -->
-          <div class="mt-6 grid grid-cols-2 gap-4">
-            <div class="flex flex-col items-center">
-              <img src="@/assets/images/wanzai_gov_QR.jpg" alt="万载人民政府微信公众号" class="w-32 h-32 object-contain" loading="lazy">
-              <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.wechatGov') }}</p>
-            </div>
-            <div class="flex flex-col items-center">
-              <img src="@/assets/images/wanzai_wenlv_QR.jpeg" alt="万载文旅微信公众号" class="w-32 h-32 object-contain" loading="lazy">
-              <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.wechatWenlv') }}</p>
-            </div>
-          </div>
         </div>
 
         <!-- Contact Info -->
@@ -115,6 +103,25 @@
               </a>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <!-- WeChat Public Accounts QR Codes -->
+      <div class="mt-8 pt-6 border-t border-gray-700">
+        <h3 class="text-xl font-bold mb-6 text-center">{{ t('footer.wechatAccounts') }}</h3>
+        <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto">
+          <div class="flex flex-col items-center">
+            <img src="@/assets/images/wanzai_gov_QR.jpg" alt="万载人民政府微信公众号" class="w-24 h-24 object-contain" loading="lazy">
+            <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.wechatGov') }}</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="@/assets/images/wanzai_wenlv_QR.jpeg" alt="万载文旅微信公众号" class="w-24 h-24 object-contain" loading="lazy">
+            <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.wechatWenlv') }}</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="@/assets/images/wxofficial.jpg" alt="焰境·万载官方微信公众号" class="w-24 h-24 object-contain" loading="lazy">
+            <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.officialWechat') }}</p>
+          </div>
         </div>
       </div>
 

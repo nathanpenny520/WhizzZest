@@ -396,6 +396,7 @@ const messages = {
       quickLinks: '快速链接',
       friendLinks: '友情链接',
       contact: '联系我们',
+      wechatAccounts: '微信公众号',
       copyright: 'Copyright © ',
       wanzaiGov: '万载县人民政府官网',
       wanzaiGovLink: 'http://www.wanzai.gov.cn/',
@@ -406,6 +407,7 @@ const messages = {
       github: '焰境·万载 GitHub 仓库',
       gitee: '焰境·万载 Gitee 仓库',
       officialDouyin: '焰境·万载官方抖音',
+      officialWechat: '焰境·万载官方公众号',
       allRightsReserved: '保留所有权利。',
       icp: '赣ICP备2026003337号',
       police: '京公网安备11010802047642号'
@@ -873,6 +875,7 @@ const messages = {
       quickLinks: 'Quick Links',
       friendLinks: 'Friend Links',
       contact: 'Contact Us',
+      wechatAccounts: 'WeChat Public Accounts',
       copyright: 'Copyright © ',
       wanzaiGov: 'Wanzai County Government',
       wanzaiGovLink: 'http://www.wanzai.gov.cn/',
@@ -883,6 +886,7 @@ const messages = {
       github: 'Wanzai Fireworks GitHub Repository',
       gitee: 'Wanzai Fireworks Gitee Repository',
       officialDouyin: 'WhizzZest Official Douyin',
+      officialWechat: 'WhizzZest Official WeChat',
       allRightsReserved: 'All rights reserved.',
       icp: '赣ICP备2026003337号',
       police: '京公网安备11010802047642号'
