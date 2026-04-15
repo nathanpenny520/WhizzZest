@@ -343,7 +343,7 @@ const messages = {
           category: '艺术燃放',
           description: '万载县彩天烟花艺术燃放制作有限公司是国内烟花行业兼具顶级生产制造能力与专业艺术燃放实力的标杆企业，以"烟花文旅演艺创意开拓者"为发展目标。',
           products: ['艺术焰火燃放', '文旅演艺策划', '烟花文创产品'],
-          advantages: ['国家甲级焰火燃放资质', '迪士尼/环球影城供应商'],
+          advantages: ['国家甲级焰火燃放资质', '迪士尼/环球影城供应商', '专业燃放团队30+年经验'],
           address: '江西省宜春市万载县三兴镇工业园',
           phone: '159 0947 0166'
         },
@@ -352,7 +352,7 @@ const messages = {
           category: '食品加工',
           description: '江西万载千年食品有限公司是万载县食品加工行业的龙头企业，成立于2001年，专注江西传统特色食品研发生产，拥有1400多年历史传承。',
           products: ['南酸枣糕', '葛制品', '百合制品'],
-          advantages: ['中国驰著名商标', '农业产业化省级龙头企业'],
+          advantages: ['中国驰著名商标', '农业产业化省级龙头企业', '江西省著名品牌'],
           address: '江西省宜春市万载县工业园B区1号',
           phone: '400-6789-228'
         },
@@ -820,7 +820,7 @@ const messages = {
           category: 'Art Fireworks Display',
           description: 'Wanzai Caitian Fireworks Art Performance Co., Ltd. is a benchmark enterprise in the domestic fireworks industry with top-level manufacturing capabilities and professional art display expertise, aiming to be a "creative pioneer in fireworks cultural tourism performances."',
           products: ['Art Fireworks Display', 'Cultural Tourism Performance Planning', 'Fireworks Cultural Products'],
-          advantages: ['National Class A Fireworks Display Qualification', 'Disney/Universal Studios Supplier'],
+          advantages: ['National Class A Fireworks Display Qualification', 'Disney/Universal Studios Supplier', 'Professional Display Team 30+ Years'],
           address: 'Industrial Park, Sanxing Town, Wanzai County, Yichun City, Jiangxi Province',
           phone: '159 0947 0166'
         },
@@ -829,7 +829,7 @@ const messages = {
           category: 'Food Processing',
           description: 'Jiangxi Wanzai QianNian Food Co., Ltd. is a leading enterprise in Wanzai food processing industry, founded in 2001, specializing in Jiangxi traditional specialty food R&D and production with over 1400 years of historical heritage.',
           products: ['South Wild Jujube Cake', 'Kudzu Products', 'Lily Products'],
-          advantages: ['China Famous Trademark', 'Provincial-Level Agricultural Industrialization Leading Enterprise'],
+          advantages: ['China Famous Trademark', 'Provincial-Level Agricultural Industrialization Leading Enterprise', 'Jiangxi Province Famous Brand'],
           address: 'No.1, Area B, Industrial Park, Wanzai County, Yichun City, Jiangxi Province',
           phone: '400-6789-228'
         },

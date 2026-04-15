@@ -200,7 +200,7 @@ const clearMarkers = () => {
 }
 
 // 添加路线（使用真实驾车导航路线）
-const addRoutes = async (routes: TravelRoute[], selectedId?: string) => {
+const addRoutes = (routes: TravelRoute[], selectedId?: string) => {
   if (!AMap || !mapInstance) return
   clearAllRouteElements()
 
@@ -236,7 +236,7 @@ const addRoutes = async (routes: TravelRoute[], selectedId?: string) => {
   routeMarkers.push(endMarker)
 
   // 添加中间途经点标记（显示序号）
-  selectedRoute.locations.slice(1, -1).forEach((loc, index) => {
+  selectedRoute.locations.slice(1, -1).forEach((loc) => {
     const waypointMarker = new AMap.Marker({
       position: [loc.longitude, loc.latitude],
       content: `<div class="waypoint-marker" style="background-color: ${selectedRoute.color}">${loc.order}</div>`,
@@ -257,6 +257,11 @@ const addRoutes = async (routes: TravelRoute[], selectedId?: string) => {
     { waypoints: waypoints },
     (status: string, result: any) => {
       if (status === 'complete' && result.routes && result.routes.length > 0) {
+        // 检查 mapInstance 是否仍然存在
+        if (!mapInstance) {
+          console.warn('[Amap] 地图实例已销毁，跳过路线绘制')
+          return
+        }
         // 绘制驾车路线 - JS API 2.0结构：routes[].steps[].path
         result.routes.forEach((routeData: any) => {
           // 从所有步骤中提取路径点
@@ -281,19 +286,22 @@ const addRoutes = async (routes: TravelRoute[], selectedId?: string) => {
               lineCap: 'round',
               showDir: true
             })
-            mapInstance.add(polyline)
-            polylines.push(polyline)
+            if (mapInstance) {
+              mapInstance.add(polyline)
+              polylines.push(polyline)
+            }
           }
         })
 
         // 调整视野包含整条路线
-        if (polylines.length > 0) {
+        if (polylines.length > 0 && mapInstance) {
           mapInstance.setFitView([...polylines, ...routeMarkers], false, [50, 50, 50, 50])
         }
         console.log('[Amap] 驾车路线规划成功')
       } else {
         console.warn('[Amap] 驾车路线规划失败，使用直线连接:', status)
         // 如果驾车路线规划失败，使用直线连接作为备用
+        if (!mapInstance) return
         const fallbackPath = selectedRoute.locations.map(loc => [loc.longitude, loc.latitude])
         const fallbackPolyline = new AMap.Polyline({
           path: fallbackPath,
