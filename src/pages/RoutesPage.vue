@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <section id="hero" class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden -mt-20 -mx-4 w-[calc(100%+2rem)]">
       <div class="absolute inset-0 z-0">
         <img
           src="../assets/images/wanzai_travelling.jpeg"
@@ -136,7 +136,7 @@
           {{ t('routes.cta.desc') }}
         </p>
         <router-link
-          to="/viewing-spots"
+          :to="getLocalizedPath('/viewing-spots')"
           class="inline-block bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-8 rounded-full transition-colors"
         >
           {{ t('routes.cta.cta') }}
@@ -149,16 +149,18 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useLocalizedPath } from '../composables/useLocalizedPath'
 import AmapComponent from '@/components/AmapComponent.vue'
 import { travelRoutes, WANZAI_CENTER } from '@/data/locations'
+
+const { t, locale } = useI18n()
+const { getLocalizedPath } = useLocalizedPath()
+const isZh = computed(() => locale.value === 'zh-CN')
 
 // 正确导入图片
 import gucWenhuaTra from '../assets/images/guc_wenhua_tra.jpg'
 import shansWenhuaTra from '../assets/images/shans_wenhua_tra.jpeg'
 import hongsWenhuaTra from '../assets/images/hongs_wenhua_tra.jpg'
-
-const { t, locale } = useI18n()
-const isZh = computed(() => locale.value === 'zh-CN')
 
 // 万载中心坐标
 const wanzaiCenter = WANZAI_CENTER

@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter, useRoute } from 'vue-router';
 
@@ -22,28 +22,16 @@ const route = useRoute();
 
 const isZhCN = computed(() => locale.value === 'zh-CN');
 
-onMounted(() => {
-  const savedLocale = localStorage.getItem('locale');
-  if (savedLocale) {
-    locale.value = savedLocale;
-  } else {
-    const path = route.path;
-    if (path.startsWith('/en')) {
-      locale.value = 'en';
-    } else {
-      locale.value = 'zh-CN';
-    }
-  }
-});
-
 const toggleLanguage = () => {
+  // 保存当前滚动位置
+  const scrollY = window.scrollY;
+
   const currentPath = route.path;
   let newPath = '';
 
   if (currentPath === '/') {
     newPath = '/en';
   } else if (currentPath === '/en') {
-    // 特殊处理：英文首页切换回中文首页
     newPath = '/';
   } else if (currentPath.startsWith('/en')) {
     newPath = currentPath.replace('/en', '') || '/';
@@ -51,10 +39,10 @@ const toggleLanguage = () => {
     newPath = '/en' + currentPath;
   }
 
-  const newLocale = newPath.startsWith('/en') ? 'en' : 'zh-CN';
-  locale.value = newLocale;  // 立即更新 locale
-  localStorage.setItem('locale', newLocale);
-
-  router.push(newPath);
+  // 使用 replace 并传递滚动位置状态，避免添加历史记录并保持滚动位置
+  router.replace({
+    path: newPath,
+    state: { preserveScroll: true, scrollY }
+  });
 };
 </script>

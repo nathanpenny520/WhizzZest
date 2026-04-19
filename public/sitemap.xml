@@ -84,6 +84,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.whizzzest-yanjingwanzai.top/en/merchant"/>
   </url>
 
+  <!-- 数字烟花 -->
+  <url>
+    <loc>https://www.whizzzest-yanjingwanzai.top/firework</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.whizzzest-yanjingwanzai.top/firework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.whizzzest-yanjingwanzai.top/en/firework"/>
+  </url>
+
+  <!-- 关于我们 -->
+  <url>
+    <loc>https://www.whizzzest-yanjingwanzai.top/about</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.whizzzest-yanjingwanzai.top/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.whizzzest-yanjingwanzai.top/en/about"/>
+  </url>
+
   <!-- 英文版首页 -->
   <url>
     <loc>https://www.whizzzest-yanjingwanzai.top/en</loc>
@@ -162,6 +182,26 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.whizzzest-yanjingwanzai.top/merchant"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.whizzzest-yanjingwanzai.top/en/merchant"/>
+  </url>
+
+  <!-- 英文版数字烟花 -->
+  <url>
+    <loc>https://www.whizzzest-yanjingwanzai.top/en/firework</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.whizzzest-yanjingwanzai.top/firework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.whizzzest-yanjingwanzai.top/en/firework"/>
+  </url>
+
+  <!-- 英文版关于我们 -->
+  <url>
+    <loc>https://www.whizzzest-yanjingwanzai.top/en/about</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.whizzzest-yanjingwanzai.top/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.whizzzest-yanjingwanzai.top/en/about"/>
   </url>
 
 </urlset>

@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <section id="hero" class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden -mt-20 -mx-4 w-[calc(100%+2rem)]">
       <div class="absolute inset-0 z-0">
         <img
           src="../assets/images/viewingspots_hero.jpeg"
@@ -105,7 +105,7 @@
           {{ t('viewingSpots.cta.desc') }}
         </p>
         <router-link
-          to="/map"
+          :to="getLocalizedPath('/map')"
           class="inline-block bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-8 rounded-full transition-colors"
         >
           {{ t('viewingSpots.cta.cta') }}
@@ -117,8 +117,10 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { useLocalizedPath } from '../composables/useLocalizedPath';
 
 const { t } = useI18n();
+const { getLocalizedPath } = useLocalizedPath();
 </script>
 
 <style scoped>

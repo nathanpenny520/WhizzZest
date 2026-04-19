@@ -1,9 +1,11 @@
 // AI聊天状态管理composable
 import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { sendChatMessage } from '@/api/aiChat';
 import type { ChatMessage } from '@/types/aiChat';
 
 export function useAIChat() {
+  const { locale } = useI18n();
   // 状态
   const messages = ref<ChatMessage[]>([]);
   const isLoading = ref(false);
@@ -52,7 +54,7 @@ export function useAIChat() {
     const typingMessageId = typingMessage.id;
 
     try {
-      const response = await sendChatMessage(question);
+      const response = await sendChatMessage(question, locale.value);
 
       // 更新AI消息内容
       updateMessage(typingMessageId, response.message, false);
@@ -63,7 +65,10 @@ export function useAIChat() {
       }
     } catch (error) {
       console.error('Send message error:', error);
-      updateMessage(typingMessageId, '抱歉，回答生成失败，请稍后再试。', false);
+      const errorMsg = locale.value === 'en'
+        ? 'Sorry, failed to generate response, please try again later.'
+        : '抱歉，回答生成失败，请稍后再试。';
+      updateMessage(typingMessageId, errorMsg, false);
     } finally {
       isLoading.value = false;
     }

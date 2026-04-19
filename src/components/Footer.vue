@@ -1,59 +1,17 @@
 <template>
   <footer class="bg-gray-800 text-white py-12" role="contentinfo">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- About Section -->
-        <div>
+        <div class="flex flex-col justify-center text-center">
           <h3 class="text-xl font-bold mb-4">{{ t('footer.about') }}</h3>
           <p class="text-gray-400">
             {{ t('footer.aboutDesc') }}
           </p>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-xl font-bold mb-4">{{ t('footer.quickLinks') }}</h3>
-          <ul class="space-y-2">
-            <li>
-              <router-link to="/" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.home') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/culture" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.culture') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/food" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.food') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/industry" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.industry') }}
-              </router-link>
-            </li>
-             <li>
-              <router-link to="/routes" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.routes') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/viewing-spots" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.viewingSpots') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/map" class="text-gray-400 hover:text-white hover:underline transition-colors">
-                {{ t('nav.map') }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
-
-        <!-- friendship Links -->
-        <div>
+        <!-- Friendship Links -->
+        <div class="flex flex-col justify-center text-center">
           <h3 class="text-xl font-bold mb-4">{{ t('footer.friendLinks') }}</h3>
           <ul class="space-y-2">
             <li>
@@ -75,29 +33,25 @@
         </div>
 
         <!-- Contact Info -->
-        <div>
+        <div class="flex flex-col justify-center text-center">
           <h3 class="text-xl font-bold mb-4">{{ t('footer.contact') }}</h3>
           <ul class="space-y-2">
             <li class="text-gray-400">
-              <i class="fas fa-envelope mr-2"></i>
-              <a href="mailto:nathanpenny@qq.com" class="hover:text-white hover:underline transition-colors">
-                nathanpenny@qq.com
+              <a href="mailto:whizzzest@outlook.com" class="hover:text-white hover:underline transition-colors">
+                whizzzest@outlook.com
               </a>
             </li>
             <li class="text-gray-400">
-              <i class="fas fa-globe mr-2"></i>
               <a href="https://github.com/nathanpenny520/WhizzZest.git" class="hover:text-white hover:underline transition-colors">
                 {{ t('footer.github') }}
               </a>
             </li>
              <li class="text-gray-400">
-              <i class="fas fa-globe mr-2"></i>
               <a href="https://gitee.com/nathanpenny520/WhizzZest.git" class="hover:text-white hover:underline transition-colors">
                 {{ t('footer.gitee') }}
               </a>
             </li>
             <li class="text-gray-400">
-              <i class="fab fa-tiktok mr-2"></i>
               <a href="https://www.douyin.com/user/MS4wLjABAAAA0fPcuNv5vy46rDu3W1laQUVvZQiyr9MbDl7E60WUnrOKVkG_JKKy68tZiWA_L3A8?from_tab_name=main" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline transition-colors">
                 {{ t('footer.officialDouyin') }}
               </a>

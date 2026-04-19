@@ -82,7 +82,7 @@ app.post('/api/chat', async (req, res) => {
   if (!question || typeof question !== 'string') {
     return res.status(400).json({
       success: false,
-      message: '请提供有效的问题'
+      message: locale === 'en' ? 'Please provide a valid question.' : '请提供有效的问题'
     });
   }
 

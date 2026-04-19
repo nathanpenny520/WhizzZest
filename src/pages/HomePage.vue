@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen">
     <!-- Hero Section with Carousel -->
-    <section id="hero" class="relative h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden -mt-20 -mx-4 w-[calc(100%+2rem)]">
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden -mt-20 -mx-4 w-[calc(100%+2rem)]">
       <!-- Carousel Container -->
       <div 
         class="absolute inset-0 z-0 overflow-hidden"
@@ -72,7 +72,7 @@
         </p>
         <div class="flex justify-center">
           <router-link
-            to="/routes"
+            :to="getLocalizedPath('/routes')"
             class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-colors"
           >
             {{ t('home.hero.cta') }}
@@ -132,7 +132,7 @@
               {{ t('home.culture.desc') }}
             </p>
             <router-link
-              to="/culture"
+              :to="getLocalizedPath('/culture')"
               class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-colors"
             >
               {{ t('home.culture.learnMore') }}
@@ -160,7 +160,7 @@
               {{ t('home.food.desc') }}
             </p>
             <router-link
-              to="/food"
+              :to="getLocalizedPath('/food')"
               class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-colors"
             >
               {{ t('home.food.learnMore') }}
@@ -188,7 +188,7 @@
               {{ t('home.industry.desc') }}
             </p>
             <router-link
-              to="/industry"
+              :to="getLocalizedPath('/industry')"
               class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-colors"
             >
               {{ t('home.industry.learnMore') }}
@@ -210,7 +210,7 @@
     <MusicPlayer />
 
     <!-- Digital Firework Entrance Section -->
-    <section class="py-16 bg-gray-50 text-gray-800">
+    <section id="firework-section" class="py-16 bg-gray-50 text-gray-800">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
@@ -271,7 +271,7 @@
 
             <div class="text-center">
               <router-link
-                to="/firework"
+                :to="locale === 'en' ? '/en/firework' : '/firework'"
                 class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-md"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -297,7 +297,7 @@
           {{ t('home.cta.desc') }}
         </p>
         <router-link
-          to="/routes"
+          :to="getLocalizedPath('/routes')"
           class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-colors"
         >
           {{ t('home.cta.viewRoutes') }}
@@ -315,8 +315,10 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import MusicPlayer from '../components/MusicPlayer.vue';
 import AIChatWidget from '../components/AIChat/AIChatWidget.vue';
+import { useLocalizedPath } from '../composables/useLocalizedPath';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const { getLocalizedPath } = useLocalizedPath();
 
 import image1 from '../assets/images/yzxf_bswz.jpeg';
 import image2 from '../assets/images/guchen_xuejing.png';

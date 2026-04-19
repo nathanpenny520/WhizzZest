@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <section id="hero" class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden -mt-20 -mx-4 w-[calc(100%+2rem)]">
       <div class="absolute inset-0 z-0">
         <img
           src="../assets/images/longhu_yanhuowanhui.jpeg"
@@ -158,7 +158,7 @@
           {{ t('industry.cta.desc') }}
         </p>
         <router-link
-          to="/viewing-spots"
+          :to="getLocalizedPath('/viewing-spots')"
           class="inline-block bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-8 rounded-full transition-colors"
         >
           {{ t('industry.cta.cta') }}
@@ -171,9 +171,11 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useLocalizedPath } from '../composables/useLocalizedPath';
 import Chart from 'chart.js/auto';
 
 const { t, locale } = useI18n();
+const { getLocalizedPath } = useLocalizedPath();
 
 import huapaoqingVideo from '../assets/videos/huapaoqing.mp4';
 

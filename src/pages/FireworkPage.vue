@@ -131,22 +131,6 @@ const { t, locale } = useI18n();
 
 const currentLocale = computed(() => locale.value);
 
-// 初始化时同步语言设置
-onMounted(() => {
-  const savedLocale = localStorage.getItem('locale');
-  if (savedLocale) {
-    locale.value = savedLocale;
-  } else {
-    // 如果没有保存的语言设置，根据URL路径判断
-    const path = route.path;
-    if (path.startsWith('/en')) {
-      locale.value = 'en';
-    } else {
-      locale.value = 'zh-CN';
-    }
-  }
-});
-
 // 状态
 const loading = ref(true);
 const loadingStatus = ref(t('firework.loadingStatus'));
@@ -171,7 +155,18 @@ const mainCanvas = ref<HTMLCanvasElement | null>(null);
 // 烟花引擎实例
 let fireworkEngine: FireworkEngine | null = null;
 
+// 初始化时根据 URL 路径设置语言
 onMounted(() => {
+  // 优先根据 URL 路径判断语言
+  const path = route.path;
+  if (path.startsWith('/en')) {
+    locale.value = 'en';
+    localStorage.setItem('locale', 'en');
+  } else {
+    locale.value = 'zh-CN';
+    localStorage.setItem('locale', 'zh-CN');
+  }
+
   initFirework();
 });
 
@@ -183,7 +178,13 @@ onUnmounted(() => {
 });
 
 function goBack() {
-  router.push(route.path.startsWith('/en') ? '/en' : '/');
+  // 使用 hash 滚动到首页的数字烟花区域
+  const currentPath = route.path;
+  if (currentPath.startsWith('/en')) {
+    router.push('/en#firework-section');
+  } else {
+    router.push('/#firework-section');
+  }
 }
 
 function toggleLanguage() {
@@ -203,7 +204,10 @@ function toggleLanguage() {
   const newLocale = newPath.startsWith('/en') ? 'en' : 'zh-CN';
   locale.value = newLocale;
   localStorage.setItem('locale', newLocale);
-  router.push(newPath);
+
+  // 使用 replace 而不是 push，这样语言切换不会添加新的历史记录
+  // 退出时 back() 会正确返回到之前的位置
+  router.replace(newPath);
 }
 
 function togglePause() {

@@ -12,7 +12,8 @@ const messages = {
       routes: '旅游线路',
       viewingSpots: '赏烟地点',
       map: '地图导览',
-      merchant: '商家展示'
+      merchant: '商家展示',
+      about: '关于我们'
     },
     home: {
       hero: {
@@ -479,6 +480,120 @@ const messages = {
       thinking: '正在思考...',
       error: '抱歉，服务暂时不可用',
       networkError: '网络连接失败，请稍后再试'
+    },
+    about: {
+      hero: {
+        title: '关于我们',
+        subtitle: '焰境·万载团队介绍'
+      },
+      sections: {
+        team: {
+          title: '我们的团队',
+          members: {
+            member1: {
+              name: '林雨晴',
+              role: '项目负责人',
+              description: '统筹全局战略规划与团队协作，协调各方资源整合，确保项目高效推进与核心目标的精准达成。'
+            },
+            member2: {
+              name: '陈浩然',
+              role: '技术架构师',
+              description: '主导网站全栈开发与系统架构设计，运用前沿技术栈构建高性能平台，打造流畅的用户交互体验。'
+            },
+            member3: {
+              name: '周雅琪',
+              role: '品牌运营总监',
+              description: '统筹新媒体矩阵运营与品牌传播策略，策划创意内容营销，持续提升平台影响力与用户触达率。'
+            },
+            member4: {
+              name: '苏婉婷',
+              role: '视频创意总监',
+              description: '主导视觉内容的策划与制作，运用影像艺术语言生动展现万载烟花文化的独特魅力与深厚底蕴。'
+            },
+            member5: {
+              name: '刘思颖',
+              role: '内容战略总监',
+              description: '制定平台内容规划与项目方案撰写，深度挖掘文化价值内涵，输出专业文案与品牌叙事体系。'
+            },
+            member6: {
+              name: 'Claude AI',
+              role: '智能赋能助手',
+              description: '基于前沿人工智能技术，为团队提供智能创作支持与效率赋能，协助内容生成、技术优化与创意策划，推动项目数字化转型与智能化升级。'
+            }
+          }
+        },
+        background: {
+          title: '项目背景',
+          originTitle: '创立初衷',
+          originDesc: '焰境·万载由一群热爱家乡文化的北京高校在读生发起，我们希望通过现代技术手段，让更多人了解万载这座拥有千年烟花文化的小城。',
+          goalTitle: '推广目标',
+          goalDesc: '我们的目标是用AI技术赋能万载文旅，通过互联网传播万载的独特魅力，吸引更多游客前来体验花炮之乡的璀璨风情，同时助力当地文旅产业高质量发展。'
+        },
+        mission: {
+          title: '使命与愿景',
+          missionTitle: '我们的使命',
+          missionDesc: '传承与弘扬万载千年烟花文化，让每一位访客都能感受到这座城市的热情与魅力。我们致力于打造最全面的万载文旅信息平台，让游客轻松规划行程，深度体验当地文化。',
+          visionTitle: '我们的愿景',
+          visionDesc: '成为万载文旅数字化转型和新媒体矩阵构建的标杆，与当地企业、政府部门紧密合作，让"焰境·万载"成为国内外游客了解万载的重要入口。未来，我们计划将这一发展路径从万载推广开来，打造成为县域经济实现破局发展的关键方案。'
+        },
+        timeline: {
+          title: '发展历程',
+          events: {
+            event1: {
+              date: '2025年12月',
+              title: '项目启动',
+              description: '团队正式组建，完成项目可行性分析与市场调研，确立平台定位与发展战略，启动技术研发准备工作。'
+            },
+            event2: {
+              date: '2026年1-2月',
+              title: '产品研发',
+              description: '完成平台原型设计与核心功能开发，采用Vue 3 + Tailwind CSS前沿技术栈，构建高性能用户体验框架，实现非遗文化、美食特产等核心模块上线。'
+            },
+            event3: {
+              date: '2026年2月末',
+              title: '正式发布',
+              description: '平台正式上线运营，面向公众开放访问，完成首轮用户测试与功能优化，确立品牌形象与市场定位。'
+            },
+            event4: {
+              date: '2026年4月',
+              title: '品牌运营',
+              description: '启动新媒体矩阵运营战略，构建微信公众号、抖音等多元化宣传渠道，持续拓展用户触达路径，提升平台品牌影响力。'
+            }
+          }
+        },
+        partners: {
+          title: '合作伙伴',
+          list: {
+            partner1: {
+              name: '万载县文旅局'
+            },
+            partner2: {
+              name: '万载古城景区'
+            },
+            partner3: {
+              name: '彩天艺术焰火'
+            },
+            partner4: {
+              name: '泰麟花炮'
+            }
+          }
+        },
+        contact: {
+          title: '联系我们',
+          emailLabel: '电子邮箱',
+          email: "{'whizzzest@outlook.com'}",
+          douyinLabel: '官方抖音',
+          douyin: '焰境·万载',
+          wechatLabel: '微信公众号',
+          wechat: '云上万载-焰遇乡旅',
+          videoLabel: '微信视频号',
+          video: '焰境·万载',
+          xiaohongshuLabel: '小红书',
+          xiaohongshu: '焰境·万载',
+          serviceLabel: '在线咨询',
+          service: '企业客服'
+        }
+      }
     }
   },
   'en': {
@@ -491,7 +606,8 @@ const messages = {
       routes: 'Travel Routes',
       viewingSpots: 'Viewing Spots',
       map: 'Map',
-      merchant: 'Merchants'
+      merchant: 'Merchants',
+      about: 'About Us'
     },
     home: {
       hero: {
@@ -958,6 +1074,120 @@ const messages = {
       thinking: 'Thinking...',
       error: 'Sorry, service unavailable',
       networkError: 'Network connection failed, please try again'
+    },
+    about: {
+      hero: {
+        title: 'About Us',
+        subtitle: 'WhizzZest Team Introduction'
+      },
+      sections: {
+        team: {
+          title: 'Our Team',
+          members: {
+            member1: {
+              name: 'Lin Yuqing',
+              role: 'Project Director',
+              description: 'Leads overall strategic planning and team coordination, orchestrates resource integration, and ensures efficient project execution with precise achievement of core objectives.'
+            },
+            member2: {
+              name: 'Chen Haoran',
+              role: 'Technical Architect',
+              description: 'Directs full-stack development and system architecture design, leveraging cutting-edge technology stacks to build high-performance platforms with seamless user interaction experience.'
+            },
+            member3: {
+              name: 'Zhou Yaqi',
+              role: 'Brand Operations Director',
+              description: 'Oversees new media matrix operations and brand communication strategies, plans creative content marketing, and continuously enhances platform influence and user reach.'
+            },
+            member4: {
+              name: 'Su Wanting',
+              role: 'Video Creative Director',
+              description: 'Leads visual content planning and production, using cinematic art language to vividly showcase the unique charm and profound heritage of Wanzai fireworks culture.'
+            },
+            member5: {
+              name: 'Liu Siying',
+              role: 'Content Strategy Director',
+              description: 'Formulates platform content planning and project documentation, deeply explores cultural value insights, and delivers professional copywriting and brand narrative systems.'
+            },
+            member6: {
+              name: 'Claude AI',
+              role: 'AI Empowerment Assistant',
+              description: 'Based on cutting-edge artificial intelligence technology, provides intelligent creative support and efficiency empowerment for the team, assists in content generation, technical optimization and creative planning, driving project digital transformation and intelligent upgrade.'
+            }
+          }
+        },
+        background: {
+          title: 'Project Background',
+          originTitle: 'Origin',
+          originDesc: 'WhizzZest was initiated by a group of students from Beijing universities who love their hometown culture. We hope to use modern technology to help more people learn about Wanzai, a small city with millennium fireworks culture.',
+          goalTitle: 'Promotion Goals',
+          goalDesc: 'Our goal is to empower Wanzai tourism with AI technology, spreading Wanzai\'s unique charm through the internet, attracting more tourists to experience the brilliant fireworks culture, while helping the local tourism industry develop with high quality.'
+        },
+        mission: {
+          title: 'Mission & Vision',
+          missionTitle: 'Our Mission',
+          missionDesc: 'Preserve and promote Wanzai\'s millennium fireworks culture, let every visitor feel the passion and charm of this city. We are dedicated to creating the most comprehensive Wanzai tourism information platform, helping tourists easily plan their trips and deeply experience local culture.',
+          visionTitle: 'Our Vision',
+          visionDesc: 'Become a benchmark for Wanzai\'s digital tourism transformation and new media matrix construction, working closely with local enterprises and government departments to make "WhizzZest" an important entry point for domestic and international tourists to learn about Wanzai. In the future, we plan to expand this development path from Wanzai, creating a key solution for county-level economies to achieve breakthrough development.'
+        },
+        timeline: {
+          title: 'Development Timeline',
+          events: {
+            event1: {
+              date: 'December 2025',
+              title: 'Project Launch',
+              description: 'Team officially formed, completed project feasibility analysis and market research, established platform positioning and development strategy, initiated technical R&D preparation.'
+            },
+            event2: {
+              date: 'January-February 2026',
+              title: 'Product Development',
+              description: 'Completed platform prototype design and core feature development, adopted Vue 3 + Tailwind CSS cutting-edge tech stack, built high-performance user experience framework, launched core modules including intangible heritage and local delicacies.'
+            },
+            event3: {
+              date: 'Late February 2026',
+              title: 'Official Release',
+              description: 'Platform officially launched for operation, opened to public access, completed first-round user testing and feature optimization, established brand image and market positioning.'
+            },
+            event4: {
+              date: 'April 2026',
+              title: 'Brand Operations',
+              description: 'Initiated new media matrix operation strategy, built diversified promotional channels including WeChat public account and Douyin, continuously expanded user reach pathways, enhanced platform brand influence.'
+            }
+          }
+        },
+        partners: {
+          title: 'Partners',
+          list: {
+            partner1: {
+              name: 'Wanzai Tourism Bureau'
+            },
+            partner2: {
+              name: 'Wanzai Ancient City'
+            },
+            partner3: {
+              name: 'Caitian Art Fireworks'
+            },
+            partner4: {
+              name: 'Tailin Fireworks'
+            }
+          }
+        },
+        contact: {
+          title: 'Contact Us',
+          emailLabel: 'Email',
+          email: "{'whizzzest@outlook.com'}",
+          douyinLabel: 'Official Douyin',
+          douyin: 'WhizzzestOfficial',
+          wechatLabel: 'WeChat',
+          wechat: 'YunshangWanzai-YanyuXianglv',
+          videoLabel: 'WeChat Video',
+          video: 'WhizzzestOfficial',
+          xiaohongshuLabel: 'Xiaohongshu',
+          xiaohongshu: 'WhizzzestOfficial',
+          serviceLabel: 'Online Support',
+          service: 'Customer Service'
+        }
+      }
     }
   }
 };

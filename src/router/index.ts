@@ -163,6 +163,24 @@ const routes = [
       title: 'WhizzZest - Digital Fireworks',
       locale: 'en'
     }
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../pages/AboutPage.vue'),
+    meta: {
+      title: '焰境·万载 - 关于我们',
+      locale: 'zh-CN'
+    }
+  },
+  {
+    path: '/en/about',
+    name: 'AboutEn',
+    component: () => import('../pages/AboutPage.vue'),
+    meta: {
+      title: 'WhizzZest - About Us',
+      locale: 'en'
+    }
   }
 ];
 
@@ -170,32 +188,47 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, _from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    } else if (to.hash) {
+    // 如果有hash，优先滚动到hash位置（比如从数字烟花退出到 #firework-section）
+    if (to.hash) {
       return {
         el: to.hash,
         behavior: 'smooth'
       };
-    } else {
-      // 滚动到页面最顶部
+    }
+
+    // 语言切换时保持滚动位置
+    const state = history.state as { preserveScroll?: boolean; scrollY?: number } | null;
+    if (state?.preserveScroll && state.scrollY !== undefined) {
       return {
-        top: 0,
-        behavior: 'smooth'
+        top: state.scrollY,
+        behavior: 'instant'
       };
     }
+
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    // 滚动到页面最顶部
+    return {
+      top: 0,
+      behavior: 'smooth'
+    };
   }
 });
 
 // Set document title and language based on route meta
 router.beforeEach((to, _from, next) => {
   document.title = to.meta.title as string || '焰境·万载';
-  
-  const locale = to.meta.locale as string;
-  if (locale && i18n.global.locale.value !== locale) {
-    i18n.global.locale.value = locale as 'zh-CN' | 'en';
+
+  // 根据路由 meta 设置语言，URL 决定语言
+  const routeLocale = to.meta.locale as string;
+  if (routeLocale) {
+    i18n.global.locale.value = routeLocale as 'zh-CN' | 'en';
+    // 同步保存到 localStorage，供下次访问使用
+    localStorage.setItem('locale', routeLocale);
   }
-  
+
   next();
 });
 

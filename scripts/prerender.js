@@ -96,6 +96,15 @@ const routes = [
     h1: '数字烟花',
     noscript: '焰境·万载数字烟花在线体验页面。请启用 JavaScript 以获得最佳体验。'
   },
+  {
+    path: '/about',
+    dir: 'about',
+    title: '焰境·万载 - 关于我们 | 团队介绍与项目背景',
+    description: '焰境·万载团队介绍：了解我们的使命愿景、发展历程、合作伙伴，探索万载文旅数字化背后的故事。',
+    keywords: '关于我们,焰境万载团队,万载文旅,项目背景,使命愿景',
+    h1: '关于我们',
+    noscript: '焰境·万载团队介绍页面：了解我们的使命愿景、发展历程和合作伙伴。请启用 JavaScript 以获得最佳体验。'
+  },
   // 英文版
   {
     path: '/en',
@@ -177,6 +186,15 @@ const routes = [
     keywords: 'digital fireworks,online fireworks,Wanzai experience',
     h1: 'Digital Fireworks',
     noscript: 'WhizzZest Wanzai digital fireworks experience. Please enable JavaScript for the best experience.'
+  },
+  {
+    path: '/en/about',
+    dir: 'en/about',
+    title: 'WhizzZest Wanzai - About Us',
+    description: 'Learn about the WhizzZest team: our mission, vision, development timeline, and partners. Discover the story behind Wanzai\'s digital tourism platform.',
+    keywords: 'about us,WhizzZest team,Wanzai tourism,mission,vision',
+    h1: 'About Us',
+    noscript: 'WhizzZest Wanzai team introduction page. Please enable JavaScript for the best experience.'
   }
 ]
 

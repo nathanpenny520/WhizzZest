@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <section id="hero" class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden -mt-20 -mx-4 w-[calc(100%+2rem)]">
       <div class="absolute inset-0 z-0">
         <img
-          src="../assets/images/commerce.png"
+          src="../assets/images/commerce.jpg"
           :alt="t('merchant.hero.title')"
           class="w-full h-full object-cover"
           loading="eager"
