@@ -94,7 +94,7 @@ whizzzest/
 │   │   └── index.ts          # 中英双语文本
 │   ├── assets/               # 静态资源
 │   │   ├── images/           # 图片
-│   │   ├── videos/           # 视频
+│   │   ├── videos/           # 视频（本地存储，未提交到Git）
 │   │   └── audio/            # 音频
 │   ├── router/               # 路由配置
 │   │   └── index.ts
@@ -641,6 +641,25 @@ PWA特性：
 - **资源压缩**：Gzip + Terser
 - **缓存策略**：静态资源30天缓存
 - **PWA缓存**：Service Worker缓存API请求
+
+---
+
+## 🎬 大视频文件说明
+
+由于部分视频文件超过 GitHub 100MB 限制，以下视频未提交到仓库：
+
+| 文件 | 大小 | 说明 |
+|------|------|------|
+| zhipengshange.mp4 | 131.82 MB | 纸棚山歌非遗视频 |
+| kaikounuo.mp4 | 104.34 MB | 开口傩非遗视频 |
+| yanhua.mp4 | 95.73 MB | 烟花文化视频 |
+| xiabu.mp4 | 95.19 MB | 夏布织造非遗视频 |
+| deshengu.mp4 | 67.62 MB | 得胜鼓非遗视频 |
+| huapaoqing.mp4 | ~50 MB | 花炮技艺视频 |
+
+**本地部署时**：请将视频文件放置于 `src/assets/videos/` 目录。
+
+**服务器部署时**：视频文件已配置于服务器，无需额外处理。
 
 ---
 

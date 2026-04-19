@@ -46,3 +46,8 @@ coverage
 # Temporary files
 *.tmp
 *.temp
+
+# Video files (>100MB, use Git LFS or local storage)
+src/assets/videos/*.mp4
+src/assets/videos/*.webm
+src/assets/videos/*.mov
