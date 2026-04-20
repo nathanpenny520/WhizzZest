@@ -397,7 +397,8 @@ const messages = {
       quickLinks: '快速链接',
       friendLinks: '友情链接',
       contact: '联系我们',
-      wechatAccounts: '微信公众号',
+      wechatAccounts: '微信二维码',
+      customerGroup: '焰境万载客户交流群',
       copyright: 'Copyright © ',
       wanzaiGov: '万载县人民政府官网',
       wanzaiGovLink: 'http://www.wanzai.gov.cn/',
@@ -410,7 +411,7 @@ const messages = {
       officialDouyin: '焰境·万载官方抖音',
       officialWechat: '焰境·万载官方公众号',
       allRightsReserved: '保留所有权利。',
-      icp: '赣ICP备2026003337号',
+      icp: '赣ICP备2026003337号-1',
       police: '京公网安备11010802047642号'
     },
     musicPlayer: {
@@ -433,6 +434,7 @@ const messages = {
       videoHint: '视频播放可能消耗较多流量，请尽量在WiFi环境下播放'
     },
     firework: {
+      title: '数字烟花体验',
       loading: '加载中',
       loadingStatus: '正在装配烟花',
       initializing: '正在初始化',
@@ -991,7 +993,8 @@ const messages = {
       quickLinks: 'Quick Links',
       friendLinks: 'Friend Links',
       contact: 'Contact Us',
-      wechatAccounts: 'WeChat Public Accounts',
+      wechatAccounts: 'WeChat QR Codes',
+      customerGroup: 'WhizzZest Customer Group',
       copyright: 'Copyright © ',
       wanzaiGov: 'Wanzai County Government',
       wanzaiGovLink: 'http://www.wanzai.gov.cn/',
@@ -1004,7 +1007,7 @@ const messages = {
       officialDouyin: 'WhizzZest Official Douyin',
       officialWechat: 'WhizzZest Official WeChat',
       allRightsReserved: 'All rights reserved.',
-      icp: '赣ICP备2026003337号',
+      icp: '赣ICP备2026003337号-1',
       police: '京公网安备11010802047642号'
     },
     musicPlayer: {
@@ -1027,6 +1030,7 @@ const messages = {
       videoHint: 'Video playback may consume a lot of data. Please play in WiFi environment as much as possible.'
     },
     firework: {
+      title: 'Digital Fireworks Experience',
       loading: 'Loading',
       loadingStatus: 'Preparing fireworks',
       initializing: 'Initializing',

@@ -7,7 +7,7 @@ const routes = [
     name: 'Home',
     component: () => import('../pages/HomePage.vue'),
     meta: {
-      title: '焰境·万载 - 首页',
+      title: '焰境·万载 - 花炮之乡 | 江西万载文旅宣传平台',
       locale: 'zh-CN'
     }
   },
@@ -16,7 +16,7 @@ const routes = [
     name: 'HomeEn',
     component: () => import('../pages/HomePage.vue'),
     meta: {
-      title: 'WhizzZest - Home',
+      title: 'WhizzZest - Hometown of Fireworks | Wanzai Tourism Platform',
       locale: 'en'
     }
   },
@@ -25,7 +25,7 @@ const routes = [
     name: 'Culture',
     component: () => import('../pages/CulturePage.vue'),
     meta: {
-      title: '焰境·万载 - 非遗文化',
+      title: '万载非遗文化 - 千年传承 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -34,7 +34,7 @@ const routes = [
     name: 'CultureEn',
     component: () => import('../pages/CulturePage.vue'),
     meta: {
-      title: 'WhizzZest - Culture',
+      title: 'Wanzai Intangible Heritage - Millennium Traditions | WhizzZest',
       locale: 'en'
     }
   },
@@ -43,7 +43,7 @@ const routes = [
     name: 'Food',
     component: () => import('../pages/FoodPage.vue'),
     meta: {
-      title: '焰境·万载 - 美食特产',
+      title: '万载美食特产 - 赣西风味 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -52,7 +52,7 @@ const routes = [
     name: 'FoodEn',
     component: () => import('../pages/FoodPage.vue'),
     meta: {
-      title: 'WhizzZest - Food & Specialties',
+      title: 'Wanzai Food & Specialties - Western Jiangxi Cuisine | WhizzZest',
       locale: 'en'
     }
   },
@@ -61,7 +61,7 @@ const routes = [
     name: 'Industry',
     component: () => import('../pages/IndustryPage.vue'),
     meta: {
-      title: '焰境·万载 - 烟花产业',
+      title: '万载烟花产业 - 中国花炮之乡 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -70,7 +70,7 @@ const routes = [
     name: 'IndustryEn',
     component: () => import('../pages/IndustryPage.vue'),
     meta: {
-      title: 'WhizzZest - Fireworks Industry',
+      title: 'Wanzai Fireworks Industry - China\'s Fireworks Hometown | WhizzZest',
       locale: 'en'
     }
   },
@@ -79,7 +79,7 @@ const routes = [
     name: 'Routes',
     component: () => import('../pages/RoutesPage.vue'),
     meta: {
-      title: '焰境·万载 - 旅游线路',
+      title: '万载旅游线路 - 精选路线推荐 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -88,7 +88,7 @@ const routes = [
     name: 'RoutesEn',
     component: () => import('../pages/RoutesPage.vue'),
     meta: {
-      title: 'WhizzZest - Travel Routes',
+      title: 'Wanzai Travel Routes - Recommended Itineraries | WhizzZest',
       locale: 'en'
     }
   },
@@ -97,7 +97,7 @@ const routes = [
     name: 'ViewingSpots',
     component: () => import('../pages/ViewingSpotsPage.vue'),
     meta: {
-      title: '焰境·万载 - 赏烟地点',
+      title: '万载赏烟地点 - 最佳观赏位置 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -106,7 +106,7 @@ const routes = [
     name: 'ViewingSpotsEn',
     component: () => import('../pages/ViewingSpotsPage.vue'),
     meta: {
-      title: 'WhizzZest - Viewing Spots',
+      title: 'Wanzai Fireworks Viewing Spots - Best Locations | WhizzZest',
       locale: 'en'
     }
   },
@@ -115,7 +115,7 @@ const routes = [
     name: 'Map',
     component: () => import('../pages/MapPage.vue'),
     meta: {
-      title: '焰境·万载 - 地图导览',
+      title: '万载地图导览 - 旅游景点分布 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -124,7 +124,7 @@ const routes = [
     name: 'MapEn',
     component: () => import('../pages/MapPage.vue'),
     meta: {
-      title: 'WhizzZest - Map',
+      title: 'Wanzai Map Guide - Tourism Attractions Map | WhizzZest',
       locale: 'en'
     }
   },
@@ -133,7 +133,7 @@ const routes = [
     name: 'Merchant',
     component: () => import('../pages/MerchantPage.vue'),
     meta: {
-      title: '焰境·万载 - 商家展示',
+      title: '万载商家展示 - 特色企业一览 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -142,7 +142,7 @@ const routes = [
     name: 'MerchantEn',
     component: () => import('../pages/MerchantPage.vue'),
     meta: {
-      title: 'WhizzZest - Merchants',
+      title: 'Wanzai Merchants Showcase - Featured Businesses | WhizzZest',
       locale: 'en'
     }
   },
@@ -151,7 +151,7 @@ const routes = [
     name: 'Firework',
     component: () => import('../pages/FireworkPage.vue'),
     meta: {
-      title: '焰境·万载 - 数字烟花',
+      title: '万载数字烟花体验 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -160,7 +160,7 @@ const routes = [
     name: 'FireworkEn',
     component: () => import('../pages/FireworkPage.vue'),
     meta: {
-      title: 'WhizzZest - Digital Fireworks',
+      title: 'Digital Fireworks Experience - Interactive | WhizzZest',
       locale: 'en'
     }
   },
@@ -169,7 +169,7 @@ const routes = [
     name: 'About',
     component: () => import('../pages/AboutPage.vue'),
     meta: {
-      title: '焰境·万载 - 关于我们',
+      title: '关于焰境·万载 - 团队介绍 | 焰境·万载',
       locale: 'zh-CN'
     }
   },
@@ -178,7 +178,7 @@ const routes = [
     name: 'AboutEn',
     component: () => import('../pages/AboutPage.vue'),
     meta: {
-      title: 'WhizzZest - About Us',
+      title: 'About WhizzZest - Team Introduction & Mission | WhizzZest',
       locale: 'en'
     }
   }

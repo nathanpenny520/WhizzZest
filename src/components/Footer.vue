@@ -63,7 +63,7 @@
       <!-- WeChat Public Accounts QR Codes -->
       <div class="mt-8 pt-6 border-t border-gray-700">
         <h3 class="text-xl font-bold mb-6 text-center">{{ t('footer.wechatAccounts') }}</h3>
-        <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
           <div class="flex flex-col items-center">
             <img src="@/assets/images/wanzai_gov_QR.jpg" alt="万载人民政府微信公众号" class="w-24 h-24 object-contain" loading="lazy">
             <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.wechatGov') }}</p>
@@ -75,6 +75,10 @@
           <div class="flex flex-col items-center">
             <img src="@/assets/images/wxofficial.jpg" alt="焰境·万载官方微信公众号" class="w-24 h-24 object-contain" loading="lazy">
             <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.officialWechat') }}</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="@/assets/images/customer-group-updated-weekly.png" alt="焰境万载客户交流群" class="w-24 h-24 object-contain" loading="lazy">
+            <p class="mt-2 text-sm text-gray-400 text-center">{{ t('footer.customerGroup') }}</p>
           </div>
         </div>
       </div>

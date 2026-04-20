@@ -64,7 +64,7 @@
             </div>
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
-                <a v-if="merchant.website" :href="merchant.website" target="_blank" class="text-xl font-bold text-gray-800 hover:text-red-600 transition-colors">{{ merchant.name }}</a>
+                <a v-if="merchant.website" :href="merchant.website" target="_blank" rel="noopener noreferrer" class="text-xl font-bold text-gray-800 hover:text-red-600 transition-colors">{{ merchant.name }}</a>
                 <h3 v-else class="text-xl font-bold text-gray-800">{{ merchant.name }}</h3>
                 <div class="flex items-center text-yellow-500">
                   <svg v-for="i in 5" :key="i" class="w-4 h-4" :class="i <= merchant.rating ? 'text-yellow-500' : 'text-gray-300'" fill="currentColor" viewBox="0 0 20 20">

@@ -1,5 +1,7 @@
 <template>
   <div class="firework-page" ref="pageRef">
+    <!-- SEO H1 Tag (visually hidden for full-screen experience) -->
+    <h1 class="sr-only">{{ t('firework.title') }} - {{ t('siteName') }}</h1>
     <div class="loading-init" v-if="loading">
       <div class="loading-init__header">{{ t('firework.loading') }}</div>
       <div class="loading-init__status">{{ loadingStatus }}</div>
