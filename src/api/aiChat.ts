@@ -2,7 +2,10 @@
 import axios from 'axios';
 import type { AIResponse, ChatRequest } from '@/types/aiChat';
 
-const API_BASE = '/api/ai';
+// 根据环境自动选择 API 地址
+const API_BASE = import.meta.env.VITE_ELECTRON
+  ? import.meta.env.VITE_API_BASE || 'http://localhost:13001/api/ai'  // Electron: 内嵌后端
+  : '/api/ai';  // Web: 通过代理或远程服务器
 
 export async function sendChatMessage(question: string, locale: string): Promise<AIResponse> {
   try {
