@@ -6,6 +6,7 @@
 ![Vite](https://img.shields.io/badge/Vite-7.2-blue?logo=vite)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-cyan?logo=tailwindcss)
+![Electron](https://img.shields.io/badge/Electron-33-blue?logo=electron)
 
 ## 📖 项目简介
 
@@ -40,6 +41,7 @@
 |------|------|
 | 前端框架 | Vue 3.5 + TypeScript 5.9 |
 | 构建工具 | Vite 7.2 |
+| 桌面应用 | Electron 33 + electron-builder |
 | UI样式 | Tailwind CSS 3.4 |
 | 状态管理 | Zustand 4.5 |
 | 国际化 | Vue I18n 11.2 |
@@ -101,6 +103,11 @@ whizzzest/
 │   ├── App.vue               # 根组件
 │   ├── main.ts               # 入口文件
 │   └── style.css             # 全局样式
+│
+├── electron/                 # Electron 专用代码（桌面应用）
+│   ├── main.ts               # 主进程入口
+│   ├── preload.ts            # 预加载脚本
+│   └── backend.ts            # 内嵌 Express 服务
 │
 ├── server/                   # 后端AI代理服务
 │   ├── index.js              # Express服务
@@ -191,6 +198,45 @@ npm run build
 ```
 
 构建产物位于 `dist/` 目录。
+
+### Electron 桌面应用开发
+
+本项目同时支持 Electron 桌面应用，可在 macOS、Windows、Linux 上运行。
+
+#### 开发模式
+
+```bash
+# 启动 Electron 开发模式（含内嵌后端）
+npm run dev:electron
+```
+
+#### 构建桌面应用
+
+```bash
+# 构建所有平台安装包
+npm run build:electron
+```
+
+构建产物位于 `release/` 目录：
+- macOS: `焰境·万载-{version}-darwin-{arch}.dmg`
+- Windows: `焰境·万载 Setup {version}.exe`
+- Linux: `焰境·万载-{version}.AppImage`
+
+#### 环境配置
+
+Electron 版本需要配置 AI 服务，在 `server/.env` 中设置：
+
+```bash
+MODEL_NAME=你的模型名称
+API_KEY=你的API密钥
+BASE_URL=https://api.openai.com
+```
+
+#### 高德地图配置
+
+Electron 版本使用高德地图需要：
+1. 登录 [高德开放平台控制台](https://console.amap.com/dev/key/app)
+2. 在对应 Key 的域名白名单中添加 `file://`
 
 ---
 
@@ -678,6 +724,12 @@ npm run build
 # 构建后预览
 npm run preview
 
+# Electron 开发模式
+npm run dev:electron
+
+# 构建 Electron 应用
+npm run build:electron
+
 # 启动后端服务
 cd server && node index.js
 
@@ -688,6 +740,12 @@ curl http://localhost:3001/api/health
 ---
 
 ## 📝 更新日志
+
+### v1.6.0 (2026-04)
+- 新增 Electron 桌面应用支持（macOS/Windows/Linux）
+- 内嵌 Express 后端服务，桌面版无需额外启动后端
+- 一套代码同时支持 Web 和桌面应用
+- 添加 .npmrc 配置国内镜像加速依赖下载
 
 ### v1.5.0 (2026-04)
 - 新增"关于我们"页面，展示团队信息
