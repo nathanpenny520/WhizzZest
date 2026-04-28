@@ -7,12 +7,14 @@ import { readFileSync, existsSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { app } from 'electron'
 
-// 加载环境变量（开发模式从 server/.env，生产模式从 resourcesPath）
+// 加载环境变量（从 app.asar 内的 server 目录）
 function loadEnvConfig() {
   try {
+    // 打包后 __dirname = /app.asar/out/main，需要 ../../server
+    // 开发时 __dirname = /electron，需要 ../server
     const envPath = app.isPackaged
-      ? resolve(process.resourcesPath, 'server/.env')
-      : resolve(dirname(__dirname), '../server/.env')
+      ? resolve(__dirname, '../../server/.env')
+      : resolve(__dirname, '../server/.env')
 
     if (existsSync(envPath)) {
       const envContent = readFileSync(envPath, 'utf-8')
@@ -47,8 +49,10 @@ let knowledgeBase: KnowledgeItem[] = []
 // 加载知识库
 function loadKnowledgeBase() {
   try {
+    // 打包后 __dirname = /app.asar/out/main，需要 ../../server
+    // 开发时 __dirname = /electron，需要 ../server
     const basePath = app.isPackaged
-      ? resolve(process.resourcesPath, 'server/knowledgeBase.json')
+      ? resolve(__dirname, '../../server/knowledgeBase.json')
       : resolve(__dirname, '../server/knowledgeBase.json')
 
     const data = readFileSync(basePath, 'utf-8')
