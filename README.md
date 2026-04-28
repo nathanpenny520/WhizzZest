@@ -253,16 +253,65 @@ npm run build
 
 构建产物位于 `dist/` 目录。
 
-#### Electron桌面应用
+#### Electron桌面应用构建
+
+Electron支持跨平台构建，但建议在目标平台上构建以获得最佳兼容性。
+
+##### macOS 构建（在 macOS 上运行）
 
 ```bash
 npm run build:electron
 ```
 
-构建产物位于 `release/` 目录：
-- macOS: `焰境·万载-{version}-darwin-{arch}.dmg`
-- Windows: `焰境·万载 Setup {version}.exe`
-- Linux: `焰境·万载-{version}.AppImage`
+构建产物：
+- `焰境·万载-{version}.dmg` - Intel (x64) DMG 安装包
+- `焰境·万载-{version}-arm64.dmg` - Apple Silicon (arm64) DMG 安装包
+- `焰境·万载-{version}-mac.zip` - Intel 版 ZIP
+- `焰境·万载-{version}-arm64-mac.zip` - Apple Silicon 版 ZIP
+
+##### Windows 构建（在 Windows 上运行）
+
+```bash
+npm run build:electron
+```
+
+构建产物：
+- `焰境·万载 Setup {version}.exe` - NSIS 安装程序
+- `焰境·万载-{version}.exe` - 便携版
+
+##### Linux 构建（在 Linux 或 macOS 上运行）
+
+```bash
+# 构建所有 Linux 格式
+npm run build:electron
+
+# 或单独构建特定格式
+npx electron-builder --linux AppImage   # AppImage 格式
+npx electron-builder --linux deb         # Debian/Ubuntu 包
+```
+
+构建产物：
+- `焰境·万载-{version}.AppImage` - 通用 Linux 格式
+- `frontend_{version}_amd64.deb` - Debian/Ubuntu 包
+
+##### 构建注意事项
+
+1. **代码签名**：生产环境发布需要配置代码签名证书
+   - macOS: 需要 Apple Developer ID
+   - Windows: 需要代码签名证书
+   - 未签名的应用可能无法在某些系统上运行
+
+2. **图标文件**：确保 `public/` 目录包含对应平台的图标
+   - `icon.icns` - macOS
+   - `icon.ico` - Windows
+   - `icon.png` - Linux
+
+3. **环境变量**：构建前确保 `server/.env` 已配置 AI 服务
+
+4. **清理构建缓存**：
+   ```bash
+   rm -rf out/ release/  # 清理构建产物
+   ```
 
 ---
 
