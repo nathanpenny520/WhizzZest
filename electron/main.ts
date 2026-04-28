@@ -33,7 +33,7 @@ function createWindow() {
     title: '焰境·万载',
     icon: join(__dirname, '../public/icon.icns'),
     webPreferences: {
-      preload: join(__dirname, 'preload.js'),
+      preload: join(__dirname, '../preload/index.cjs'),
       nodeIntegration: false,
       contextIsolation: true,
       webSecurity: true

@@ -3,10 +3,93 @@
 
 import express from 'express'
 import cors from 'cors'
+import { readFileSync, existsSync } from 'fs'
+import { resolve, dirname } from 'path'
+import { app } from 'electron'
 
-// 动态导入 CommonJS 模块
-// @ts-ignore - knowledgeBase.js 是 CommonJS 模块
-import { retrieveKnowledge, buildContext } from '../server/knowledgeBase.js'
+// 加载环境变量（开发模式从 server/.env，生产模式从 resourcesPath）
+function loadEnvConfig() {
+  try {
+    const envPath = app.isPackaged
+      ? resolve(process.resourcesPath, 'server/.env')
+      : resolve(dirname(__dirname), '../server/.env')
+
+    if (existsSync(envPath)) {
+      const envContent = readFileSync(envPath, 'utf-8')
+      envContent.split('\n').forEach(line => {
+        const trimmed = line.trim()
+        if (trimmed && !trimmed.startsWith('#')) {
+          const [key, value] = trimmed.split('=')
+          if (key && value && !process.env[key.trim()]) {
+            process.env[key.trim()] = value.trim()
+          }
+        }
+      })
+      console.log('[Backend] 环境变量加载成功')
+    }
+  } catch (error) {
+    console.warn('[Backend] 环境变量加载失败:', error)
+  }
+}
+
+loadEnvConfig()
+
+// 知识库数据（从 JSON 加载）
+interface KnowledgeItem {
+  id: string
+  category: string
+  keywords: string[]
+  content: string
+}
+
+let knowledgeBase: KnowledgeItem[] = []
+
+// 加载知识库
+function loadKnowledgeBase() {
+  try {
+    const basePath = app.isPackaged
+      ? resolve(process.resourcesPath, 'server/knowledgeBase.json')
+      : resolve(__dirname, '../server/knowledgeBase.json')
+
+    const data = readFileSync(basePath, 'utf-8')
+    knowledgeBase = JSON.parse(data)
+    console.log('[Backend] 知识库加载成功，共', knowledgeBase.length, '条')
+  } catch (error) {
+    console.error('[Backend] 知识库加载失败:', error)
+    knowledgeBase = []
+  }
+}
+
+// 关键词匹配评分
+function scoreKeywords(question: string, item: KnowledgeItem): number {
+  const questionLower = question.toLowerCase()
+  let score = 0
+  for (const keyword of item.keywords) {
+    if (questionLower.includes(keyword.toLowerCase())) {
+      score += 1
+    }
+  }
+  return score
+}
+
+// RAG 检索
+function retrieveKnowledge(question: string, topK = 3): KnowledgeItem[] {
+  const scoredItems = knowledgeBase.map(item => ({
+    ...item,
+    score: scoreKeywords(question, item)
+  }))
+
+  return scoredItems
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK)
+}
+
+// 构建上下文
+function buildContext(items: KnowledgeItem[]): string {
+  if (items.length === 0) return ''
+  return items.map(item => `[${item.category}]\n${item.content}`).join('\n\n')
+}
 
 // Express 应用实例
 let backendApp: express.Application | null = null
@@ -51,6 +134,9 @@ export async function startBackend(port: number): Promise<void> {
     console.log('[Backend] 后端服务已在运行')
     return
   }
+
+  // 加载知识库
+  loadKnowledgeBase()
 
   backendApp = express()
 

@@ -2,12 +2,27 @@
 import axios from 'axios';
 import type { AIResponse, ChatRequest } from '@/types/aiChat';
 
+// Electron 环境检测 - 使用 preload 暴露的 API
+declare global {
+  interface Window {
+    electronAPI?: {
+      isElectron: boolean;
+      backendPort: number;
+    };
+  }
+}
+
 // 根据环境自动选择 API 地址
-const API_BASE = import.meta.env.VITE_ELECTRON
-  ? import.meta.env.VITE_API_BASE || 'http://localhost:13001/api/ai'  // Electron: 内嵌后端
-  : '/api/ai';  // Web: 通过代理或远程服务器
+const getApiBase = () => {
+  if (window.electronAPI?.isElectron) {
+    return `http://localhost:${window.electronAPI.backendPort}/api`;
+  }
+  return '/api/ai';  // Web: 通过 Vite proxy 转发到后端
+};
 
 export async function sendChatMessage(question: string, locale: string): Promise<AIResponse> {
+  const API_BASE = getApiBase();
+
   try {
     const request: ChatRequest = {
       question,

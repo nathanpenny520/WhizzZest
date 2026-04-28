@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "out/main/index.js",
+  "main": "out/main/index.cjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && node scripts/prerender.js",
     "preview": "vite preview",
-    "dev:electron": "electron-vite dev",
+    "dev:electron": "ELECTRON_RUN_AS_NODE= electron-vite dev",
     "build:electron": "electron-vite build && electron-builder",
     "preview:electron": "electron-vite preview"
   },

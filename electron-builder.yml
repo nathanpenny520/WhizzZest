@@ -12,6 +12,7 @@ files:
   - server/**/*
   - .env
   - '!**/*.map'
+  - '!server/node_modules/**'
 
 # macOS 配置
 mac:

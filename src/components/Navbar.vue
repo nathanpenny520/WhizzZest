@@ -58,6 +58,11 @@
           >
             {{ link.label }}
           </span>
+
+          <!-- Language Switcher for Mobile -->
+          <div class="pt-2 border-t border-gray-100">
+            <LanguageSwitcher />
+          </div>
         </div>
       </transition>
     </div>
