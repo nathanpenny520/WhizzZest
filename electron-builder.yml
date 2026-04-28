@@ -1,0 +1,64 @@
+appId: com.whizzzest.yanjingwanzai
+productName: 焰境·万载
+copyright: Copyright © 2026 焰境·万载团队
+
+directories:
+  output: release
+  buildResources: public
+
+files:
+  - out/**/*
+  - public/**/*
+  - server/**/*
+  - .env
+  - '!**/*.map'
+
+# macOS 配置
+mac:
+  category: public.app-category.travel
+  icon: public/icon.icns
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+  hardenedRuntime: true
+  gatekeeperAssess: false
+
+# Windows 配置
+win:
+  icon: public/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+
+# NSIS 安装程序配置
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  installerIcon: public/icon.ico
+  uninstallerIcon: public/icon.ico
+  installerHeaderIcon: public/icon.ico
+  license: LICENSE
+
+# Linux 配置
+linux:
+  icon: public/icon.png
+  category: Travel
+  target:
+    - AppImage
+    - deb
+  maintainer: whizzzest@outlook.com
+
+# 发布配置（暂不发布到商店）
+publish: null
