@@ -10,6 +10,9 @@
   },
   "devDependencies": {
     "@types/node": "^25.2.3",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^6.0.0-beta.1",
     "rollup-plugin-visualizer": "^7.0.0",
     "terser": "^5.46.0",
     "typescript": "~5.9.3",
