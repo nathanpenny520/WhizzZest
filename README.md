@@ -260,7 +260,13 @@ Electron支持跨平台构建，但建议在目标平台上构建以获得最佳
 ##### macOS 构建（在 macOS 上运行）
 
 ```bash
+# 构建所有 macOS 版本
 npm run build:electron
+
+# 或单独构建特定架构
+npx electron-builder --mac dmg --arm64   # 仅 Apple Silicon DMG
+npx electron-builder --mac dmg --x64     # 仅 Intel DMG
+npx electron-builder --mac zip --arm64   # 仅 Apple Silicon ZIP
 ```
 
 构建产物：
@@ -272,7 +278,12 @@ npm run build:electron
 ##### Windows 构建（在 Windows 上运行）
 
 ```bash
+# 构建所有 Windows 版本
 npm run build:electron
+
+# 或单独构建特定格式
+npx electron-builder --win nsis --x64   # 仅 NSIS 安装程序
+npx electron-builder --win portable --x64  # 仅便携版
 ```
 
 构建产物：
